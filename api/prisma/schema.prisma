@@ -22,7 +22,7 @@ model Pool {
   userId   String?
 
   participants Participant[]
-  onwer        User?         @relation(fields: [userId], references: [id])
+  onwerId      User?         @relation(fields: [userId], references: [id])
 }
 
 model Participant {
