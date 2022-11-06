@@ -20,3 +20,31 @@ model Pool {
   code     String   @unique
   createAt DateTime @default(now())
 }
+
+model Participant {
+  id String @id @default(cuid())
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  avatarUrl String?
+  createAt  DateTime @default(now())
+}
+
+model Game {
+  id   String   @id @default(cuid())
+  data DateTime
+
+  firstTeanCountryCode  String
+  secondTeamCountryCode String
+}
+
+model Guess {
+  id String @id @default(cuid())
+
+  firstTeamPoints  Int
+  secondTeamPoints Int
+  createAt         DateTime @default(now())
+}
