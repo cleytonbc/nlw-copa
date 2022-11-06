@@ -19,7 +19,7 @@ CREATE TABLE "User" (
 -- CreateTable
 CREATE TABLE "Game" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "data" DATETIME NOT NULL,
+    "date" DATETIME NOT NULL,
     "firstTeanCountryCode" TEXT NOT NULL,
     "secondTeamCountryCode" TEXT NOT NULL
 );
