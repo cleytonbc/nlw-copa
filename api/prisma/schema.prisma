@@ -19,10 +19,10 @@ model Pool {
   title    String
   code     String   @unique
   createAt DateTime @default(now())
-  userId   String?
+  ownerId  String?
 
   participants Participant[]
-  ownerId      User?         @relation(fields: [userId], references: [id])
+  owner        User?         @relation(fields: [ownerId], references: [id])
 }
 
 model Participant {
@@ -52,7 +52,7 @@ model Game {
   id   String   @id @default(cuid())
   date DateTime
 
-  firstTeanCountryCode  String
+  firstTeamCountryCode  String
   secondTeamCountryCode String
 
   guesses Guess[]
