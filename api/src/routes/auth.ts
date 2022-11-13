@@ -10,7 +10,6 @@ export async function authRoutes(fastify: FastifyInstance){
     fastify.get( '/me', { 
         onRequest: [authenticate]
     }, async (request) => {
-        await request.jwtVerify()
 
         return { user: request.user}
     })
